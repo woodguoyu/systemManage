@@ -949,11 +949,11 @@ body {
 }
 @font-face {
 	font-family: 'jiantou';  /* project id 427322 */
-	src: url('http://at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.eot');
-	src: url('http://at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.eot?#iefix') format('embedded-opentype'),
-	url('http://at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.woff') format('woff'),
-	url('http://at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.ttf') format('truetype'),
-	url('http://at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.svg#iconfont') format('svg');
+	src: url('//at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.eot');
+	src: url('//at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.eot?#iefix') format('embedded-opentype'),
+	url('//at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.woff') format('woff'),
+	url('//at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.ttf') format('truetype'),
+	url('//at.alicdn.com/t/font_427322_8qxpl1rg5572pgb9.svg#iconfont') format('svg');
 }
 .jiantou {
 	font-family:"jiantou" !important;
