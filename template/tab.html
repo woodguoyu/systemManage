@@ -1,0 +1,12 @@
+<ul class="layui-tab-title">
+	<li ng-repeat="item in tab.items" ng-click="item.clicked()" ng-class="{true:'layui-this',false:''}[item.command.data.selected]">
+  	  	<span>{{item.command.caption}}</span>
+  	  	<i ng-if="item.command.data.caption!='首页'" class="layui-icon layui-unselect layui-tab-close" ng-click="item.close()">ဆ</i>
+	</li>
+</ul>
+<div class="layui-tab-content">
+	<div ng-repeat="item in tab.items" ng-class="{true:'layui-tab-item layui-show',false:'layui-tab-item'}[item.command.data.selected]">
+		<iframe class="J_iframe" ng-src="{{item.command.url}}" seamless="" scroll="no" frameborder="0" height="100%" width="100%" style="display: block;">
+		</iframe>
+	</div>
+</div>

@@ -1,0 +1,45 @@
+	<div id="leftnav">
+		<div class="nav-left pull-left firstClick" id="leftmenu-left" >
+			<div class="setLeft_btn"><img src="./img/logo_header.png" alt=""></div>
+			<ul class="first-nav" id="side-menu" >
+				<li ng-repeat="first in menu.children|group" on-Finish-Render-Filters ng-click="first.clicked()" ng-class="{true:'leftNavItem active',false:'leftNavItem'}[first.selected]" title="{{first.description}}">
+					<a ng-if="!first.isGroup" ng-class="first.name ? 'group-caption':'menu-item'">
+						<span class="icon"><i class="iconfont">{{first.iconClass}}</i></span>
+						<span ng-if="first.hasChildren"></span>
+						<span class="text">{{first.caption}}</span>
+					</a>
+			  <!--      <div ng-if="first.isGroup" ng-click="first.clicked()" ng-class="first.name ? 'group-caption':'menu-item'">--=={{first.caption}}==--{{first.name}}</div>-->
+					<ul ng-if="first.isGroup" ng-class="(first.expanded ? '' : 'expanded')">
+						<li ng-repeat="second in menu.children | group:first.name" class="leftNavItem">
+							<!--<hr ng-if="second.seperator==true" />-->
+							<a ng-click="second.clicked()" ng-class="first.name ? 'group-caption':'menu-item'">
+								<span class="icon"><i class="iconfont">{{second.icon}}</i></span>
+								<span ng-if="!second.seperator">
+									{{second.caption}}
+									<!--<span ng-if="second.hasChildren">（有子集）</span>-->
+								</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="nav-right pull-left" id="leftmenu-right" ng-if="menu.current && menu.current.isDispalyed!=false">
+			<h5>{{menu.current.caption}}</h5>
+			<div class="clone_secondnav firstClick">
+				<ul class="second-nav doubleNav" ng-repeat="first in menu.current.children|group" on-Finish-Render-Filters>
+					<li ng-if="!first.isGroup" ng-click="first.clicked()" ng-class="{true:'active',false:''}[first.selected]" ng-class="first.name ? 'group-caption':'menu-item'">
+						<a>{{first.caption}}</a>
+					</li>
+					<li ng-if="first.isGroup" ng-click="first.clicked()" ng-class="first.name ? 'group-caption':'menu-item'">
+						<span class="text emailNavTitle"><i class="emailSect active"></i>{{first.caption}}</span>
+					</li>
+					<ul ng-if="first.isGroup" ng-show="first.expanded" ng-repeat="second in menu.current.children | group:first.name">
+						<li ng-if="!second.seperator" ng-click="second.clicked()" ng-class="{true:'active',false:''}[second.selected]">
+							<a>{{second.caption}}</a>
+						</li>
+					</ul>
+				</ul>
+			</div>
+	   </div>
+	</div>
